@@ -1,7 +1,11 @@
-
+import Navbar from "../components/Navbar"
+import Products from "../components/Products"
 function Home() {
   return (
-    <div>Home</div>
+    <div className="">
+        <Navbar />
+        <Products/>
+    </div>
   )
 }
 
