@@ -29,23 +29,30 @@ function Products() {
 
   return (
     <>
-    <button className="bg-white border-2">jewelery</button>
-    <button className="bg-white border-2">jewelery</button>
-    <button className="bg-white border-2">jewelery</button>
-      <div className="flex w-full">
-<div className="justify-between flex flex-wrap gap-10 items-center">
+    <div className="flex justify-evenly p-10">
+
+    <button className="p-2 rounded-md bg-yellow-400">All</button>
+    <button className="p-2 rounded-md bg-slate-100">electronics</button>
+    <button className="p-2 rounded-md bg-slate-100">jewelery</button>
+    <button className="p-2 rounded-md bg-slate-100">men's clothing</button>
+    <button className="p-2 rounded-md bg-slate-100">women's clothing</button>
+    </div>
+      <div className="flex w-full px-10">
+<div className="justify-around flex flex-wrap gap-5 items-center">
  {product &&
         product.map((item: { id: Key | null | undefined; image: string | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; price: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
-            <div className="w-1/4 flex flex-col items-center justify-around border-2 h-96" key={item.id}>
-       
+            <div className="w-1/4  flex flex-col items-center justify-around border-2 h-96" key={item.id}>
 
-            <img className="w-2/3" src={item.image} alt="" />
-            <h1>{item?.title}</h1>
+            <img className="w-2/3 p-2" src={item.image} alt="" />
+            <h1 className="px-2">{item?.title}</h1>
             <p>{item.price}</p>
+            <div className="flex gap-3">
+
             <Link to={`/product/${id}`}>
-            <button className="bg-yellow-400">view</button>
+            <button className="bg-slate-100 rounded-sm p-2">view</button>
             </Link>
-            <button className="bg-yellow-400">add to cart</button>
+            <button className="bg-yellow-400 p-2 rounded-sm">add to cart</button>
+            </div>
             </div>
        
         ))}
