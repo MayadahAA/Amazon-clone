@@ -41,9 +41,9 @@ function Products() {
 <div className="justify-around flex flex-wrap gap-5 items-center">
  {product &&
         product.map((item: { id: Key | null | undefined; image: string | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; price: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
-            <div className="w-1/4  flex flex-col items-center justify-around border-2 h-96" key={item.id}>
+            <div className="w-1/4  flex flex-col gap-3 items-center justify-around rounded-md bg-white border-2 border-slate-100 py-5 h-96" key={item.id}>
 
-            <img className="w-2/3 p-2" src={item.image} alt="" />
+            <img className="w-1/3 p-2" src={item.image} alt="" />
             <h1 className="px-2">{item?.title}</h1>
             <p>{item.price}</p>
             <div className="flex gap-3">
