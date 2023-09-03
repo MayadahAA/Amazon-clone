@@ -19,15 +19,17 @@ function ProductDetiles() {
     
 
     
- const p =
-    axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
-        setproduct(res.data);
+    useEffect (() => {
 
-    });
+        axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
+            setproduct(res.data);
+    
+        });
+    }, [id])
 
   return (
     <>
-       {p && p.map((item: {
+       {product && product.map((item: {
             image: string | undefined;
             price: string;
             title: string; 
